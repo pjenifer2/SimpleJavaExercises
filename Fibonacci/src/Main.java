@@ -1,6 +1,14 @@
+import java.util.Scanner;
+
+
 public class Main {
     public static void main(String[] args) {
-        int fibonacci = 5;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the fibonaccie sequence you are looking to compute: ");
+        int fibonacci = scan.nextInt();
+        scan.close();
+
+
         if (fibonacci == 0) {
             System.out.println("no value");
         } else if (fibonacci == 1) {
