@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * need to add validation of user input
+ * inspired by Amigoscode Java Full Course
  */
 
 public class Main {
