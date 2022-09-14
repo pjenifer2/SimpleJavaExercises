@@ -9,12 +9,21 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter the Fibonacci sequence you are looking to compute: ");
-        int fibonacci = scan.nextInt();
+        String userInput = scan.nextLine();
+
         scan.close();
+        int fibonacci;
 
-        //testing git
+        try {
+            fibonacci = Integer.parseInt(userInput);
+            System.out.println("In proper order" + Arrays.toString(fibonnaciCalc(fibonacci)));
+            System.out.println("In reverse order" + Arrays.toString(reverseFibonacci(fibonacci)));
+        } catch (NumberFormatException e){
+            System.out.println("You did not enter an integer");
+        }
 
-
+    }
+    public static int[] fibonnaciCalc(int fibonacci) {
         int[] numbers = new int[fibonacci];
 
 
@@ -36,10 +45,26 @@ public class Main {
                 b = c;
             }
         }
-        System.out.print(Arrays.toString(numbers));
 
-
-
+        return numbers;
 
     }
+
+    public static int[] reverseFibonacci(int fibonacci){
+
+        int[] numbers = fibonnaciCalc(fibonacci);
+
+        int[] reverseNumbers = new int[numbers.length];
+        int count = numbers.length - 1;
+        int insertCount = 0;
+        while (count >= 0) {
+            reverseNumbers[insertCount] = numbers[count];
+            insertCount++;
+            count--;
+        }
+
+
+        return reverseNumbers;
+    }
 }
+
