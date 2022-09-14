@@ -22,6 +22,9 @@ public class Main {
             System.out.println("You did not enter an integer");
         }
 
+        Pac12Team azWildcats = new Pac12Team("Tucson", "Wildcats", 1);
+        System.out.println("The " + azWildcats.teamName + " are located in " + azWildcats.location + " and are ranked #" + azWildcats.rank);
+
     }
     public static int[] fibonnaciCalc(int fibonacci) {
         int[] numbers = new int[fibonacci];
@@ -65,6 +68,19 @@ public class Main {
 
 
         return reverseNumbers;
+    }
+
+    static class Pac12Team {
+        String location;
+        String teamName;
+        int rank;
+
+        //below is constructor
+        Pac12Team(String location, String teamName, int rank){
+            this.location = location;
+            this.teamName = teamName;
+            this.rank = rank;
+        }
     }
 }
 
